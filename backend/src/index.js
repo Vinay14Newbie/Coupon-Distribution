@@ -11,7 +11,21 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
   cors({
-    origin: '*'
+    origin: '*',
+    origin: (origin, callback) => {
+      if (
+        !origin ||
+        origin.includes('https://coupon-distribution-t01c.onrender.com') || // backend
+        origin.includes('https://coupon-distribution-9uhj.vercel.app') || // frontend on Vercel
+        origin.startsWith('http://localhost')
+      ) {
+        callback(null, true);
+      } else {
+        callback(new Error('Not allowed by CORS'));
+      }
+    },
+    allowedHeaders: 'Origin,X-Requested-With,Content-Type,Accept,Authorization',
+    credentials: true
   })
 );
 
