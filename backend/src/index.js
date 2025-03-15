@@ -15,7 +15,7 @@ app.use(
       if (
         !origin ||
         origin.startsWith('http://localhost') ||
-        origin.includes('your-deployed-domain.com')
+        origin.includes('https://coupon-distribution-t01c.onrender.com')
       ) {
         callback(null, true); // ✅ Allow local and deployed frontend
       } else {
