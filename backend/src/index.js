@@ -11,18 +11,19 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
   cors({
-    origin: (origin, callback) => {
-      if (
-        !origin ||
-        origin.includes('https://coupon-distribution-t01c.onrender.com') || // backend
-        origin.includes('https://coupon-distribution-9uhj.vercel.app') || // frontend on Vercel
-        origin.startsWith('http://localhost')
-      ) {
-        callback(null, true);
-      } else {
-        callback(new Error('Not allowed by CORS'));
-      }
-    },
+    origin: '*',
+    // origin: (origin, callback) => {
+    //   if (
+    //     !origin ||
+    //     origin.includes('https://coupon-distribution-t01c.onrender.com') || // backend
+    //     origin.includes('https://coupon-distribution-9uhj.vercel.app') || // frontend on Vercel
+    //     origin.startsWith('http://localhost')
+    //   ) {
+    //     callback(null, true);
+    //   } else {
+    //     callback(new Error('Not allowed by CORS'));
+    //   }
+    // },
     credentials: true
   })
 );
