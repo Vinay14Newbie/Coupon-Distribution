@@ -6,7 +6,7 @@ import couponRouter from './routers/couponRouter.js';
 const app = express();
 
 // middleware
-// app.use(cors());
+app.use(cors());
 app.use(express.json());
 app.use(cookieParser());
 app.use(
@@ -14,8 +14,8 @@ app.use(
     origin: (origin, callback) => {
       if (
         !origin ||
-        origin.startsWith('http://localhost') ||
-        origin.includes('https://coupon-distribution-t01c.onrender.com')
+        origin.includes('https://coupon-distribution-t01c.onrender.com') ||
+        origin.startsWith('http://localhost')
       ) {
         callback(null, true); // ✅ Allow local and deployed frontend
       } else {
