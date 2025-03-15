@@ -14,10 +14,11 @@ app.use(
     origin: (origin, callback) => {
       if (
         !origin ||
-        origin.includes('https://coupon-distribution-t01c.onrender.com') ||
+        origin.includes('https://coupon-distribution-t01c.onrender.com') || // backend
+        origin.includes('https://coupon-distribution-9uhj.vercel.app') || // frontend on Vercel
         origin.startsWith('http://localhost')
       ) {
-        callback(null, true); // ✅ Allow local and deployed frontend
+        callback(null, true);
       } else {
         callback(new Error('Not allowed by CORS'));
       }
