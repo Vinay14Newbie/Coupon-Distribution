@@ -6,7 +6,7 @@ import couponRouter from './routers/couponRouter.js';
 const app = express();
 
 // middleware
-app.use(cors());
+// app.use(cors());
 app.use(express.json());
 app.use(cookieParser());
 app.use(
