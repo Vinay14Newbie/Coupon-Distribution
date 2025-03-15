@@ -11,8 +11,18 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
   cors({
-    origin: 'http://localhost:5173', // ✅ Match the frontend URL
-    credentials: true // ✅ Allow cookies and auth headers
+    origin: (origin, callback) => {
+      if (
+        !origin ||
+        origin.startsWith('http://localhost') ||
+        origin.includes('your-deployed-domain.com')
+      ) {
+        callback(null, true); // ✅ Allow local and deployed frontend
+      } else {
+        callback(new Error('Not allowed by CORS'));
+      }
+    },
+    credentials: true
   })
 );
 
