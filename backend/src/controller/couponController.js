@@ -5,6 +5,7 @@ export const claimCouponController = (req, res) => {
 
   return res.status(200).json({
     success: true,
+    coupon: coupon,
     message: `Congrats! You claimed ${coupon}`
   });
 };

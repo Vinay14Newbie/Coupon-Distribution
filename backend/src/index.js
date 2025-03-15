@@ -6,9 +6,15 @@ import couponRouter from './routers/couponRouter.js';
 const app = express();
 
 // middleware
+// app.use(cors());
 app.use(express.json());
 app.use(cookieParser());
-app.use(cors());
+app.use(
+  cors({
+    origin: 'http://localhost:5173', // ✅ Match the frontend URL
+    credentials: true // ✅ Allow cookies and auth headers
+  })
+);
 
 app.use('/api/coupons', couponRouter);
 
