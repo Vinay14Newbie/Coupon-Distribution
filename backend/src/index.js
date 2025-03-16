@@ -6,12 +6,12 @@ import couponRouter from './routers/couponRouter.js';
 const app = express();
 
 // middleware
-app.use(cors());
+// app.use(cors());
 app.use(express.json());
 app.use(cookieParser());
 
 const corsOptions = {
-  origin: '*',
+  origin: 'https://coupon-distribution-t01c.onrender.com',
   credentials: true
 };
 app.use(cors(corsOptions));
