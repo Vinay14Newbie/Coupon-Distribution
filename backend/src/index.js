@@ -12,8 +12,8 @@ app.use(cookieParser());
 
 const corsOptions = {
   origin: [
-    'https://coupon-distribution-t01c.onrender.com', // Backend
-    'https://coupon-distribution-9uhj.vercel.app', // Frontend
+    'https://coupon-distribution-pf3x.onrender.com', // Backend
+    'https://coupon-distribution-zeta.vercel.app/', // Frontend
     'http://localhost:5173' // Local dev
   ],
   credentials: true
