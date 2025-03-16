@@ -1,4 +1,4 @@
-const cooldownPeriod = 5000; // 1hour in miliseconds
+const cooldownPeriod = 5000; // 5 seconds
 const ipTimestamps = {};
 
 export const checkAbuse = (req, res, next) => {
