@@ -11,11 +11,7 @@ app.use(express.json());
 app.use(cookieParser());
 
 const corsOptions = {
-  origin: [
-    'https://coupon-distribution-pf3x.onrender.com', // Backend
-    'https://coupon-distribution-zeta.vercel.app/', // Frontend
-    'http://localhost:5173' // Local dev
-  ],
+  origin: '*',
   credentials: true
 };
 
