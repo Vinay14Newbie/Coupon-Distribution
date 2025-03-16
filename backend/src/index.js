@@ -11,9 +11,14 @@ app.use(express.json());
 app.use(cookieParser());
 
 const corsOptions = {
-  origin: 'https://coupon-distribution-t01c.onrender.com',
+  origin: [
+    'https://coupon-distribution-t01c.onrender.com', // Backend
+    'https://coupon-distribution-9uhj.vercel.app', // Frontend
+    'http://localhost:5173' // Local dev
+  ],
   credentials: true
 };
+
 app.use(cors(corsOptions));
 
 // app.use(
